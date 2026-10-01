@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculateIdNumberTest {
     @Test
-    void checkRightIdNumbers() {
+    void check_correct_Id_numbers() {
         // Arrange
         CalculateIdNumber calculateIdNumber = new CalculateIdNumber();
         List<String> listOfIDs = new ArrayList<>();
@@ -42,7 +42,7 @@ public class CalculateIdNumberTest {
     }
 
     @Test
-    void checkNegativeIdNumber() {
+    void check_negative_Id_number() {
         // Arrange
         CalculateIdNumber calculateIdNumber = new CalculateIdNumber();
 
@@ -54,7 +54,7 @@ public class CalculateIdNumberTest {
     }
 
     @Test
-    void checkIdNumberThatIsTooLarge() {
+    void check_Id_number_that_is_too_large() {
         // Arrange
         CalculateIdNumber calculateIdNumber = new CalculateIdNumber();
 

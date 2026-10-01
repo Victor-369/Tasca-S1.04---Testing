@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LibraryTest {
     @Test
-    void booksCollectionIsNotNull() {
+    void booksCollection_is_not_null() {
         // Arrange
         Library library = new Library();
 
@@ -22,7 +22,7 @@ public class LibraryTest {
     }
 
     @Test
-    void collectionSizeIsCorrect() {
+    void collectionSize_is_correct() {
         // Arrange
         Library library = new Library();
 
@@ -36,7 +36,7 @@ public class LibraryTest {
     }
 
     @Test
-    void booksInRightPositionInCollection() {
+    void books_in_correct_position_in_collection() {
         // Arrange
         Library library = new Library();
 
@@ -52,7 +52,7 @@ public class LibraryTest {
     }
 
     @Test
-    void bookInSpecificPositionGetsRightTitle() {
+    void book_in_specific_position_gets_correct_title() {
         // Arrange
         Library library = new Library();
 
@@ -66,7 +66,7 @@ public class LibraryTest {
     }
 
     @Test
-    void addBookInSpecificPositionModifyCollectionRight() {
+    void add_book_in_specific_position_modify_collection_correct() {
         // Arrange
         Library library = new Library();
 
@@ -82,7 +82,7 @@ public class LibraryTest {
     }
 
     @Test
-    void removeBookReducesCollectionSize() {
+    void remove_book_reduces_collection_size() {
         // Arrange
         Library library = new Library();
 
@@ -98,7 +98,7 @@ public class LibraryTest {
     }
 
     @Test
-    void getOrderedListOfBookKeepingOriginalOrder() {
+    void get_ordered_list_of_book_keeping_original_order() {
         // Arrange
         Library library = new Library();
 
@@ -125,7 +125,7 @@ public class LibraryTest {
     }
 
     @Test
-    void doNotAllowDuplicatedBooks() {
+    void do_not_allow_duplicated_books() {
         // Arrange
         Library library = new Library();
 
