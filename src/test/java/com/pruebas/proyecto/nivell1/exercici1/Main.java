@@ -9,7 +9,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Main {
-    //TODO: La col·lecció no ha de ser nul·la després d’instanciar la classe.
     @Test
     void booksCollectionIsNotNull() {
         // Arrange
@@ -22,7 +21,6 @@ public class Main {
         assertNotNull(booksCollection, "Collection must be not null");
     }
 
-    //TODO: La mida de la col·lecció és correcta després d’afegir diversos llibres.
     @Test
     void collectionSizeIsCorrect() {
         // Arrange
@@ -37,7 +35,6 @@ public class Main {
         assertEquals(3, library.getAllBooks().size());
     }
 
-    //TODO: Els llibres es troben a la posició esperada un cop afegits.
     @Test
     void booksInRightPositionInCollection() {
         // Arrange
@@ -54,7 +51,6 @@ public class Main {
         assertEquals("Book 3", library.getBookTitleByPosition(2));
     }
 
-    //TODO: El mètode per obtenir un llibre per posició retorna el títol correcte.
     @Test
     void bookInSpecificPositionGetsRightTitle() {
         // Arrange
@@ -69,7 +65,6 @@ public class Main {
         assertEquals("Book 2", library.getAllBooks().get(1).getTitle());
     }
 
-    //TODO: Afegir un llibre en una posició concreta modifica correctament la col·lecció.
     @Test
     void addBookInSpecificPositionModifyCollectionRight() {
         // Arrange
@@ -86,7 +81,6 @@ public class Main {
         assertEquals("Book 3", library.getAllBooks().get(3).getTitle());
     }
 
-    //TODO: Eliminar un llibre pel títol redueix la mida de la col·lecció.
     @Test
     void removeBookReducesCollectionSize() {
         // Arrange
@@ -103,7 +97,6 @@ public class Main {
         assertEquals(2, library.getAllBooks().size());
     }
 
-    //TODO: La llista ordenada retorna els llibres en ordre alfabètic (sense modificar la col·lecció original).
     @Test
     void getOrderedListOfBookKeepingOriginalOrder() {
         // Arrange
@@ -131,7 +124,6 @@ public class Main {
         assertEquals("Book 5", orderedCollection.get(4).getTitle());
     }
 
-    //TODO: No s’han de permetre llibres amb títols duplicats.
     @Test
     void doNotAllowDuplicatedBooks() {
         // Arrange
