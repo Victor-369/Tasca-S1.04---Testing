@@ -9,7 +9,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CalculateIdNumberTest {
+class CalculateIdNumberTest {
     @Test
     void check_correct_Id_numbers() {
         // Arrange
@@ -43,10 +43,8 @@ public class CalculateIdNumberTest {
 
     @Test
     void check_negative_Id_number() {
-        // Arrange
         CalculateIdNumber calculateIdNumber = new CalculateIdNumber();
 
-        // Assert
         assertThrows(
                 IllegalArgumentException.class,
                 () -> calculateIdNumber.calculateLetter("-66666666")
@@ -55,10 +53,8 @@ public class CalculateIdNumberTest {
 
     @Test
     void check_Id_number_that_is_too_large() {
-        // Arrange
         CalculateIdNumber calculateIdNumber = new CalculateIdNumber();
 
-        // Assert
         assertThrows(
                 IllegalArgumentException.class,
                 () -> calculateIdNumber.calculateLetter("100000000")

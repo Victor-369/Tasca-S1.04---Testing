@@ -2,11 +2,10 @@ package com.pruebas.proyecto.nivell1.exercici3;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
-public class ArrayExceptionExampleTest {
+class ArrayExceptionExampleTest {
     private final ArrayExceptionExample example = new ArrayExceptionExample();
 
     @Test

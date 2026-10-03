@@ -8,44 +8,35 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LibraryTest {
+class LibraryTest {
     @Test
     void booksCollection_is_not_null() {
-        // Arrange
         Library library = new Library();
 
-        // Act
         List<Book> booksCollection = library.getAllBooks();
 
-        // Assert
         assertNotNull(booksCollection, "Collection must be not null");
     }
 
     @Test
     void collectionSize_is_correct() {
-        // Arrange
         Library library = new Library();
 
-        // Act
         library.addBook("Book 1");
         library.addBook("Book 2");
         library.addBook("Book 3");
 
-        // Assert
         assertEquals(3, library.getAllBooks().size());
     }
 
     @Test
     void books_in_correct_position_in_collection() {
-        // Arrange
         Library library = new Library();
 
-        // Act
         library.addBook("Book 1");
         library.addBook("Book 2");
         library.addBook("Book 3");
 
-        // Assert
         assertEquals("Book 1", library.getBookTitleByPosition(0));
         assertEquals("Book 2", library.getBookTitleByPosition(1));
         assertEquals("Book 3", library.getBookTitleByPosition(2));
@@ -53,45 +44,36 @@ public class LibraryTest {
 
     @Test
     void book_in_specific_position_gets_correct_title() {
-        // Arrange
         Library library = new Library();
 
-        // Act
         library.addBook("Book 1");
         library.addBook("Book 2");
         library.addBook("Book 3");
 
-        // Assert
         assertEquals("Book 2", library.getAllBooks().get(1).getTitle());
     }
 
     @Test
     void add_book_in_specific_position_modify_collection_correct() {
-        // Arrange
         Library library = new Library();
 
-        // Act
         library.addBook("Book 1");
         library.addBook("Book 2");
         library.addBook("Book 3");
         library.addBookInSpecificPosition(new Book("Book 4"), 2);
 
-        // Assert
         assertEquals("Book 4", library.getAllBooks().get(2).getTitle());
         assertEquals("Book 3", library.getAllBooks().get(3).getTitle());
     }
 
     @Test
     void remove_book_reduces_collection_size() {
-        // Arrange
         Library library = new Library();
 
-        // Act
         library.addBook("Book 1");
         library.addBook("Book 2");
         library.addBook("Book 3");
 
-        // Assert
         assertEquals(3, library.getAllBooks().size());
         library.deleteBookByTitle("Book 3");
         assertEquals(2, library.getAllBooks().size());
@@ -99,17 +81,14 @@ public class LibraryTest {
 
     @Test
     void get_ordered_list_of_book_keeping_original_order() {
-        // Arrange
         Library library = new Library();
 
-        // Act
         library.addBook("Book 3");
         library.addBook("Book 5");
         library.addBook("Book 1");
         library.addBook("Book 4");
         library.addBook("Book 2");
 
-        // Assert
         assertEquals("Book 3", library.getAllBooks().get(0).getTitle());
         assertEquals("Book 5", library.getAllBooks().get(1).getTitle());
         assertEquals("Book 1", library.getAllBooks().get(2).getTitle());
@@ -126,13 +105,9 @@ public class LibraryTest {
 
     @Test
     void do_not_allow_duplicated_books() {
-        // Arrange
         Library library = new Library();
-
-        // Act
         library.addBook("Book 1");
 
-        // Assert
         assertThrows(
                 IllegalArgumentException.class,
                 () -> library.addBook("Book 1")
