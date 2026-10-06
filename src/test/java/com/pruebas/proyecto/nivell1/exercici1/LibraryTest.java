@@ -89,13 +89,14 @@ class LibraryTest {
         library.addBook("Book 4");
         library.addBook("Book 2");
 
+        List<Book> orderedCollection = library.getCopyOfOrderedList();
+
         assertEquals("Book 3", library.getAllBooks().get(0).getTitle());
         assertEquals("Book 5", library.getAllBooks().get(1).getTitle());
         assertEquals("Book 1", library.getAllBooks().get(2).getTitle());
         assertEquals("Book 4", library.getAllBooks().get(3).getTitle());
         assertEquals("Book 2", library.getAllBooks().get(4).getTitle());
 
-        List<Book> orderedCollection = library.getCopyOfOrderedList();
         assertEquals("Book 1", orderedCollection.get(0).getTitle());
         assertEquals("Book 2", orderedCollection.get(1).getTitle());
         assertEquals("Book 3", orderedCollection.get(2).getTitle());
