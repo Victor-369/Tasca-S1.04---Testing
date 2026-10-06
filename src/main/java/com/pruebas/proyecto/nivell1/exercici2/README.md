@@ -10,7 +10,7 @@ This exercise calculates the Spanish DNI check letter from an eight-digit number
 
 - `CalculateIdNumberTest.java`
 
-The tests check ten valid DNI numbers and their expected results, a negative number and a number with more than eight digits. The ten valid examples are currently checked in one test method; they are not yet expressed as a JUnit parameterised test.
+The tests check ten valid DNI numbers and their expected results (as a JUnit parameterised test with `@CsvSource`), a negative number and a number with more than eight digits.
 
 Run this exercise's tests from the project root with:
 
