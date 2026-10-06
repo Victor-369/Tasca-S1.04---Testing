@@ -3,6 +3,7 @@ package com.pruebas.proyecto.nivell1.exercici1.model;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 public class Library {
     private final List<Book> booksCollection;
@@ -12,7 +13,7 @@ public class Library {
     }
 
     public void addBook(String title) {
-        bookExistsInCollection(title);
+        validateBookDoesNotExist(title);
 
         booksCollection.add(new Book(title));
     }
@@ -23,14 +24,15 @@ public class Library {
 
     public String getBookTitleByPosition(int position) {
         validateExistsBooksInCollection();
-        validateIndex(position);
+        validateReadIndex(position);
 
         return booksCollection.get(position).getTitle();
     }
 
     public void addBookInSpecificPosition(Book book, int position) {
-        validateExistsBooksInCollection();
-        validateIndex(position);
+        Objects.requireNonNull(book, "Book must not be null.");
+        validateInsertIndex(position);
+        validateBookDoesNotExist(book.getTitle());
 
         booksCollection.add(position, book);
     }
@@ -38,7 +40,7 @@ public class Library {
     public void deleteBookByTitle(String title) {
         validateExistsBooksInCollection();
 
-        booksCollection.removeIf(book -> book.getTitle().equalsIgnoreCase(title));
+        booksCollection.removeIf(book -> book.getTitle().equals(title));
     }
 
     public List<Book> getCopyOfOrderedList() {
@@ -47,10 +49,15 @@ public class Library {
         return List.copyOf(booksCollection.stream().sorted(Comparator.comparing(Book::getTitle)).toList());
     }
 
-
-    private void validateIndex(int position) {
+    private void validateReadIndex(int position) {
         if (position < 0 || position >= booksCollection.size()) {
             throw new IllegalArgumentException("There is no book at that position.");
+        }
+    }
+
+    private void validateInsertIndex(int position) {
+        if (position < 0 || position > booksCollection.size()) {
+            throw new IllegalArgumentException("Invalid position to insert a book.");
         }
     }
 
@@ -60,7 +67,7 @@ public class Library {
         }
     }
 
-    private void bookExistsInCollection(String title) {
+    private void validateBookDoesNotExist(String title) {
         boolean bookExistsInCollection = booksCollection.stream()
                 .anyMatch(b -> b.getTitle().equals(title));
 
